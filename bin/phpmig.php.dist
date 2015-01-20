@@ -1,0 +1,34 @@
+<?php
+/**
+ * Migration script
+ */
+
+use \Phpmig\Adapter,
+    \Pimple, 
+    \Doctrine\DBAL\DriverManager;
+
+
+$container = new Pimple();
+
+$container['db'] = $container->share(function() {
+    /**
+     * Get config params
+     */
+    $config = require_once __DIR__.'/../config/config.php';
+
+    // create connection
+    $connection = DriverManager::getConnection($config['db']['db.options']);
+
+    // fix enum type
+    $connection->getDatabasePlatform()->registerDoctrineTypeMapping('enum', 'string');
+
+    return $connection;
+});
+
+$container['phpmig.adapter'] = $container->share(function() use ($container) {
+    return new Adapter\Doctrine\DBAL($container['db'], 'migrations');
+});
+
+$container['phpmig.migrations_path'] = __DIR__ . DIRECTORY_SEPARATOR . 'migrations';
+
+return $container;
