@@ -1,0 +1,6 @@
+/logs/*
+!logs/.gitkeep
+/vendor/
+/bin/phpmig*
+!logs/phpmig.php.dist
+/composer.lock

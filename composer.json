@@ -1,0 +1,19 @@
+{
+    "require": {
+        "silex/silex": "~1.2",
+        "doctrine/dbal": "2.5.*",
+        "monolog/monolog": "1.*",
+        "twig/twig": "1.*",
+
+        "davedevelopment/phpmig": "*",
+        "pimple/pimple": "1.*"
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
+    "autoload": {
+        "psr-0": {
+            "App": "src/"
+        }
+    }
+}
