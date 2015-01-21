@@ -23,15 +23,18 @@ $app = new Silex\Application();
 /**
  * Configure $app
  */
-$app['debug'] = true;
+$app['debug'] = $config['debug'];
 
 
 /**
- * Register additions
+ * Set some provider's
  */
 $app->register(new Silex\Provider\DoctrineServiceProvider(), $config['db']);
 $app->register(new Silex\Provider\MonologServiceProvider(), $config['monolog']);
 $app->register(new Silex\Provider\TwigServiceProvider(), $config['twig']);
+$app->register(new Silex\Provider\UrlGeneratorServiceProvider());
+$app->register(new Silex\Provider\ValidatorServiceProvider());
+$app->register(new Silex\Provider\SessionServiceProvider());
 
 
 /**

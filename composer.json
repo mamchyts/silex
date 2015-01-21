@@ -6,7 +6,8 @@
         "twig/twig": "1.*",
 
         "davedevelopment/phpmig": "*",
-        "pimple/pimple": "1.*"
+        "pimple/pimple": "1.*",
+        "symfony/validator": "~2.6"
     },
     "config": {
         "bin-dir": "bin"
