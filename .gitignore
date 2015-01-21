@@ -3,5 +3,5 @@
 /vendor/
 /bin/phpmig
 /bin/phpmig.php
-##/config/config.php
+/config/config.php
 /composer.lock
