@@ -1,5 +1,4 @@
 <?php
-
 /**
  * All server config
  */
@@ -31,6 +30,3 @@ return array(
         'twig.path' => __DIR__.'/../src/App/Views/',
     ),
 );
-
-
-
